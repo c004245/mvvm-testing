@@ -1,5 +1,6 @@
 package com.example.mvvmtesting.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
@@ -20,7 +21,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val adapter = ContactAdapter({ contact ->
-
+            val intent = Intent(this, AddActivity::class.java)
+            intent.putExtra(AddActivity.EXTRA_CONTACT_NAME, contact.name)
+            intent.putExtra(AddActivity.EXTRA_CONTACT_NUMBER, contact.number)
+            intent.putExtra(AddActivity.EXTRA_CONTACT_ID, contact.id)
+            startActivity(intent)
         }, { contact ->
             deleteDialog(contact)
         })
@@ -36,6 +41,11 @@ class MainActivity : AppCompatActivity() {
             //Update UI
             adapter.setContacts(contacts!!)
         })
+
+        btn_main.setOnClickListener {
+            val intent = Intent(this, AddActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun deleteDialog(contact: Contact) {
