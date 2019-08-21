@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".AddActivity">
+        tools:context=".view.AddActivity">
 
     <TextView
             android:id="@+id/tv_add_name"
@@ -43,7 +43,7 @@
     <EditText android:layout_width="0dp"
               android:layout_height="wrap_content"
               android:ems="10"
-              android:id="@+id/et_add_phone"
+              android:id="@+id/et_add_number"
               app:layout_constraintStart_toStartOf="@+id/et_add_name"
               app:layout_constraintTop_toTopOf="@+id/tv_add_number"
               app:layout_constraintBottom_toBottomOf="@+id/tv_add_number"
