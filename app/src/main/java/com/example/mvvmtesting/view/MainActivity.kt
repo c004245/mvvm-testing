@@ -1,4 +1,4 @@
-package com.example.mvvmtesting
+package com.example.mvvmtesting.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,8 +6,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.mvvmtesting.R
 import com.example.mvvmtesting.model.Contact
-import com.example.mvvmtesting.view.ContactAdapter
 import com.example.mvvmtesting.viewmodel.ContactViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
