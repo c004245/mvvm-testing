@@ -4,8 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "contract")
-data class Contract (
+@Entity(tableName = "contact")
+data class Contact (
     @PrimaryKey(autoGenerate = true)
     var id: Long?,
 
