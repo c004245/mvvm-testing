@@ -5,11 +5,13 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import com.example.mvvmtesting.model.Contact
 import com.example.mvvmtesting.repository.ContactRepository
+import com.example.mvvmtesting.view.ContactAdapter
 
 class ContactViewModel(application: Application): AndroidViewModel(application) {
 
     private val repository = ContactRepository(application)
     private val contacts = repository.getAll()
+    private var adapter: ContactAdapter? = null
 
     fun getAll(): LiveData<List<Contact>> {
         return this.contacts
@@ -21,5 +23,9 @@ class ContactViewModel(application: Application): AndroidViewModel(application) 
 
     fun delete(contact: Contact) {
         repository.delete(contact)
+    }
+
+    fun getAdapter(): ContactAdapter? {
+        return adapter
     }
 }
