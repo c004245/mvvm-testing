@@ -1,6 +1,7 @@
 package com.example.mvvmtesting.databinding
 
 import android.content.ClipData
+import android.util.Log
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
@@ -10,6 +11,7 @@ import com.example.mvvmtesting.view.ContactAdapter
 
 @BindingAdapter("setAdapter")
 fun bindRecyclerViewAdapter(recyclerView: RecyclerView, adapter: RecyclerView.Adapter<RecyclerView.ViewHolder>) {
+    Log.d("TEST", "bindingRecyclerView --->")
     recyclerView.setHasFixedSize(true)
     recyclerView.layoutManager = LinearLayoutManager(recyclerView.context)
     recyclerView.adapter = adapter

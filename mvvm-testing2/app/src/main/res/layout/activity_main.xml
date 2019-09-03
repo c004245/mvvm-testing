@@ -34,7 +34,7 @@
                 android:id="@+id/recyclerView"
                 tools:listitem="@layout/item_contact"
                 app:layout_constraintBottom_toTopOf="@+id/btn_main"
-                app:setAdapter="@{model.getAdapter()}"/>
+                app:setAdapter="@{model.getAll()}"/>
 
         <Button
                 android:text="Add"

@@ -1,6 +1,7 @@
 package com.example.mvvmtesting.viewmodel
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import com.example.mvvmtesting.model.Contact
@@ -26,6 +27,7 @@ class ContactViewModel(application: Application): AndroidViewModel(application) 
     }
 
     fun getAdapter(): ContactAdapter? {
+        Log.d("TEST", "getAdapter")
         return adapter
     }
 }
