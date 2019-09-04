@@ -3,6 +3,7 @@ package com.example.test_mvvm_git.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import com.example.test_mvvm_git.model.Project
 import com.example.test_mvvm_git.service.ProjectRepository
 
 class ProjectListViewModel(private val app: Application): AndroidViewModel(app) {
@@ -16,5 +17,5 @@ class ProjectListViewModel(private val app: Application): AndroidViewModel(app) 
     fun getProjectListObservable(): LiveData<List<Project>> {
         return projectListObservable
     }
-    
+
 }
