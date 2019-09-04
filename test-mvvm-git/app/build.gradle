@@ -25,6 +25,8 @@ android {
 
 project.ext {
     retrofit = "2.0.2"
+    arch = "2.0.0"
+    support = "1.0.0"
 }
 
 dependencies {
@@ -37,7 +39,14 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    implementation "com.google.android.material:material:$project.support"
+
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$project.retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$project.retrofit"
+
+    //Arch
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$project.arch"
+    implementation "androidx.lifecycle:lifecycle-runtime:$project.arch"
+    implementation "androidx.lifecycle:lifecycle-extensions:$project.arch"
 }
