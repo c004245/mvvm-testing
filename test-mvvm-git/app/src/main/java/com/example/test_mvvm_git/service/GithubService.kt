@@ -7,8 +7,10 @@ import retrofit2.http.Path
 
 interface GithubService {
 
-    val HTTPS_API_GITHUB_URL
-        get() = "https://api.github.com/"
+    companion object {
+        val HTTPS_API_GITHUB_URL
+            get() = "https://api.github.com/"
+    }
 
     @GET("users/{user}/repos")
     fun getProjectList(@Path("user") user: String): Call<List<Project>>
