@@ -6,12 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.test_mvvm_git.R
 import com.example.test_mvvm_git.databinding.FragmentProjectListBinding
 import com.example.test_mvvm_git.di.Injectable
 import com.example.test_mvvm_git.service.model.Project
+import com.example.test_mvvm_git.view.adapter.ProjectAdapter
+import com.example.test_mvvm_git.view.callback.ProjectClickCallback
 import com.example.test_mvvm_git.viewmodel.ProjectListViewModel
 
 class ProjectListFragment: Fragment(), Injectable {
@@ -23,8 +26,13 @@ class ProjectListFragment: Fragment(), Injectable {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_project_list, container, false)
 
-        pro
+        projectAdapter = ProjectAdapter(projectClickCallback)
+        binding.projectList.adapter = projectAdapter
+        binding.isLoading = true
+
+        return binding.root
     }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val viewModel = ViewModelProviders.of(this).get(ProjectListViewModel::class.java)
@@ -32,7 +40,7 @@ class ProjectListFragment: Fragment(), Injectable {
         observeViewModel(viewModel)
     }
 
-    fun observeViewModel(viewModel: ProjectListViewModel) {
+    private fun observeViewModel(viewModel: ProjectListViewModel) {
         viewModel.getProjectListObservable().observe(this, object : Observer<List<Project>> {
             override fun onChanged(projects: List<Project>?) {
                 if (projects != null) {
@@ -42,6 +50,13 @@ class ProjectListFragment: Fragment(), Injectable {
         })
     }
 
+    private val projectClickCallback = object : ProjectClickCallback {
+        override fun onClick(project: Project) {
+            if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) {
+                (activity as MainActivity).show(project)
+            }
+        }
+    }
     companion object {
         val TAG = ProjectListFragment::class.simpleName
     }

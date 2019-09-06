@@ -29,7 +29,10 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
     }
 
     fun show(project: Project) {
-        val projectFragment = ProjectFragment.for
+        val projectFragment = ProjectFragment.forProject(project.name)
+
+        supportFragmentManager.beginTransaction().addToBackStack("project").replace(R.id.fragment_container,
+            projectFragment, null).commit()
     }
 
     override fun supportFragmentInjector(): DispatchingAndroidInjector<Fragment> {
