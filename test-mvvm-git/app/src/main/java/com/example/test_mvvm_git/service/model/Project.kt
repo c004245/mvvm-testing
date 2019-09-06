@@ -1,4 +1,4 @@
-package com.example.test_mvvm_git.model
+package com.example.test_mvvm_git.service.model
 
 import java.util.*
 

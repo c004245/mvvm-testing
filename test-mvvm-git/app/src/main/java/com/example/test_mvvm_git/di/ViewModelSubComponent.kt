@@ -1,6 +1,7 @@
 package com.example.test_mvvm_git.di
 
 import com.example.test_mvvm_git.viewmodel.ProjectListViewModel
+import com.example.test_mvvm_git.viewmodel.ProjectViewModel
 import dagger.Subcomponent
 
 @Subcomponent

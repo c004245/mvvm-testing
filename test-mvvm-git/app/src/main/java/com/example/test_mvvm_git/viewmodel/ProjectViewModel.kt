@@ -6,7 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
-import com.example.test_mvvm_git.model.Project
+import com.example.test_mvvm_git.service.model.Project
 import com.example.test_mvvm_git.service.repository.ProjectRepository
 
 import javax.inject.Inject

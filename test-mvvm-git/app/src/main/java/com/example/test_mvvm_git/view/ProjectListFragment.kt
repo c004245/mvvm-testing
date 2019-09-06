@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.example.test_mvvm_git.model.Project
+import com.example.test_mvvm_git.service.model.Project
 import com.example.test_mvvm_git.viewmodel.ProjectListViewModel
 
 class ProjectListFragment: Fragment {

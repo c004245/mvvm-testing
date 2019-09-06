@@ -3,7 +3,7 @@ package com.example.test_mvvm_git.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.example.test_mvvm_git.model.Project
+import com.example.test_mvvm_git.service.model.Project
 import com.example.test_mvvm_git.service.repository.ProjectRepository
 
 class ProjectListViewModel(private val app: Application): AndroidViewModel(app) {

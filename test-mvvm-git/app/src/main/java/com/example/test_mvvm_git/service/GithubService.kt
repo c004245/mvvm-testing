@@ -1,6 +1,6 @@
 package com.example.test_mvvm_git.service
 
-import com.example.test_mvvm_git.model.Project
+import com.example.test_mvvm_git.service.model.Project
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
