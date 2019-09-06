@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.test_mvvm_git.R
+import com.example.test_mvvm_git.databinding.FragmentProjectListBinding
 import com.example.test_mvvm_git.di.Injectable
 import com.example.test_mvvm_git.service.model.Project
 import com.example.test_mvvm_git.viewmodel.ProjectListViewModel
@@ -20,7 +21,9 @@ class ProjectListFragment: Fragment(), Injectable {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_project)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_project_list, container, false)
+
+        pro
     }
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
