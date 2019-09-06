@@ -23,7 +23,7 @@ constructor(projectRepository: ProjectRepository, application: Application) : An
     var project = ObservableField<Project>()
 
     init {
-        ABSENT.setValue(null)
+        ABSENT.value = null
     }
 
     init {

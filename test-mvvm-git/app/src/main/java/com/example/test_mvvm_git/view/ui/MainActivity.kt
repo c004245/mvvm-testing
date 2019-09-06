@@ -1,11 +1,10 @@
-package com.example.test_mvvm_git.view
+package com.example.test_mvvm_git.view.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.test_mvvm_git.R
 import com.example.test_mvvm_git.service.model.Project
-import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import javax.inject.Inject
@@ -24,7 +23,9 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
             val fragment = ProjectListFragment()
 
             supportFragmentManager.beginTransaction()
-                .add(R.id.fragment_container, fragment, ProjectListFragment.TAG).commit()
+                .add(R.id.fragment_container, fragment,
+                    ProjectListFragment.TAG
+                ).commit()
         }
     }
 

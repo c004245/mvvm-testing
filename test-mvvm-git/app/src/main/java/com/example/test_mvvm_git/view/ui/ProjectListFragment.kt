@@ -1,4 +1,4 @@
-package com.example.test_mvvm_git.view
+package com.example.test_mvvm_git.view.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -1,4 +1,4 @@
-package com.example.test_mvvm_git.view
+package com.example.test_mvvm_git.view.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -21,7 +21,7 @@ class ProjectFragment: Fragment(), Injectable {
     lateinit var binding: FragmentProjectDetailsBinding
 
     @Inject
-    val viewModelFactory: ViewModelProvider.Factory
+    lateinit var viewModelFactory: ViewModelProvider.Factory
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
