@@ -2,8 +2,10 @@ package com.example.test_mvvm_git.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import com.example.test_mvvm_git.R
 import com.example.test_mvvm_git.service.model.Project
+import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import javax.inject.Inject
@@ -11,7 +13,7 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
 
     @Inject
-    val dispatchingAndroidInject: DispatchingAndroidInjector<Fragment>
+    lateinit var dispatchingAndroidInject: DispatchingAndroidInjector<Fragment>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +30,10 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
 
     fun show(project: Project) {
         val projectFragment = ProjectFragment.for
+    }
+
+    override fun supportFragmentInjector(): DispatchingAndroidInjector<Fragment> {
+        return dispatchingAndroidInject
     }
 
 }
