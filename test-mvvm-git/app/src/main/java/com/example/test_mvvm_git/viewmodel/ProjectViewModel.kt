@@ -18,7 +18,6 @@ constructor(projectRepository: ProjectRepository, application: Application) : An
     var projectObservable: LiveData<Project>
 
     var projectID: MutableLiveData<String> = MutableLiveData()
-    set(value) = projectID.value = value
 
 
     var project = ObservableField<Project>()
