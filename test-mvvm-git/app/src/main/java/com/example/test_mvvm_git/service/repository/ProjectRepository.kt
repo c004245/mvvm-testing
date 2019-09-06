@@ -3,7 +3,6 @@ package com.example.test_mvvm_git.service.repository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.test_mvvm_git.service.model.Project
-import com.example.test_mvvm_git.service.GithubService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

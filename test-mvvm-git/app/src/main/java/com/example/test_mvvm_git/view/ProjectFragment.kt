@@ -10,6 +10,7 @@ import javax.inject.Inject
 
 class ProjectFragment: Fragment(), Injectable {
 
+
     @Inject
     val viewModelFactory: ViewModelProvider.Factory
 
@@ -17,5 +18,20 @@ class ProjectFragment: Fragment(), Injectable {
         super.onActivityCreated(savedInstanceState)
 
         val viewModel = ViewModelProviders.of(this, viewModelFactory).get(ProjectViewModel::class.java)
+    }
+
+    companion object {
+
+        val KEY_PROJECT_ID = "project_id"
+
+        fun forProject(projectId: String): ProjectFragment {
+            val fragment = ProjectFragment()
+            val args = Bundle()
+
+            args.putString(KEY_PROJECT_ID, projectId)
+            fragment.arguments = args
+
+            return fragment
+        }
     }
 }

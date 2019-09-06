@@ -1,6 +1,6 @@
 package com.example.test_mvvm_git.di
 
-import com.example.test_mvvm_git.MainActivity
+import com.example.test_mvvm_git.view.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

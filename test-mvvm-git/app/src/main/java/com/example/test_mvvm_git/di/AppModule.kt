@@ -1,7 +1,7 @@
 package com.example.test_mvvm_git.di
 
 import androidx.lifecycle.ViewModelProvider
-import com.example.test_mvvm_git.service.GithubService
+import com.example.test_mvvm_git.service.repository.GithubService
 import com.example.test_mvvm_git.viewmodel.ProjectViewModelFactory
 import dagger.Module
 import dagger.Provides

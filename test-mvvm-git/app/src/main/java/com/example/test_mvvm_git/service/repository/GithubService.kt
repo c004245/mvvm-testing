@@ -1,4 +1,4 @@
-package com.example.test_mvvm_git.service
+package com.example.test_mvvm_git.service.repository
 
 import com.example.test_mvvm_git.service.model.Project
 import retrofit2.Call

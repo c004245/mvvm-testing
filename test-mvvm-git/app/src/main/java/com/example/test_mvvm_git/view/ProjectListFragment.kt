@@ -29,4 +29,7 @@ class ProjectListFragment: Fragment {
         })
     }
 
+    companion object {
+        val TAG = ProjectListFragment::class.simpleName
+    }
 }
