@@ -48,6 +48,7 @@ class ProjectListFragment: Fragment(), Injectable {
         viewModel.getProjectListObservable().observe(this,
             Observer<List<Project>> { projects ->
                 if (projects != null) {
+                    binding.isLoading = false
                     projectAdapter.setProjectList(projects)
                 }
             })
@@ -60,6 +61,7 @@ class ProjectListFragment: Fragment(), Injectable {
             }
         }
     }
+
     companion object {
         val TAG = ProjectListFragment::class.simpleName
     }

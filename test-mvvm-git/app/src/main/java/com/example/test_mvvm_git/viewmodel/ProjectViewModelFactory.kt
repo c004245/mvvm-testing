@@ -11,9 +11,6 @@ import java.util.concurrent.Callable
 import javax.inject.Inject
 import java.lang.RuntimeException
 
-
-
-
 @Singleton
 class ProjectViewModelFactory @Inject constructor(private val viewModelSubComponent: ViewModelSubComponent): ViewModelProvider.Factory {
 

@@ -10,7 +10,6 @@ import com.example.test_mvvm_git.databinding.ProjectListItemBinding
 import com.example.test_mvvm_git.service.model.Project
 import com.example.test_mvvm_git.view.callback.ProjectClickCallback
 import java.util.*
-import javax.annotation.Nullable
 
 class ProjectAdapter (private val projectClickCallback: ProjectClickCallback):
     RecyclerView.Adapter<ProjectAdapter.Companion.ProjectViewHolder>() {

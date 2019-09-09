@@ -11,6 +11,7 @@ import dagger.android.AndroidInjection
 import dagger.android.support.AndroidSupportInjection
 import dagger.android.support.HasSupportFragmentInjector
 
+
 class AppInjector {
     companion object {
         fun init(mvvmApplication: MVVMApplication) {
