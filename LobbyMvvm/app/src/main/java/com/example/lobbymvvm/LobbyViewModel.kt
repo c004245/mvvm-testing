@@ -1,5 +1,6 @@
 package com.example.lobbymvvm
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
 
@@ -7,7 +8,8 @@ class LobbyViewModel constructor(private val loadCommonGreetingUseCase: LoadComm
                                  private val loadLobbyGreetingUseCase: LoadLobbyGreetingUseCase,
                                  private val schedulersFacade: SchedulersFacade): ViewModel() {
 
-    val disposables = CompositeDisposable()
+    private val disposables = CompositeDisposable()
+    private val response = MutableLiveData<Response>
 
     override fun onCleared() {
         disposables.clear()
@@ -18,6 +20,9 @@ class LobbyViewModel constructor(private val loadCommonGreetingUseCase: LoadComm
     }
 
     private fun loadGreeting(loadGreetingUseCase: LoadGreetingUseCase) {
-        disposables.add(loadGreetingUseCase.execute().sub)
+        disposables.add(loadGreetingUseCase.execute()
+            .subscribeOn(schedulersFacade.io())
+            .observeOn(schedulersFacade.ui())
+            .doOnSubscribe(-- -> res))
     }
 }
