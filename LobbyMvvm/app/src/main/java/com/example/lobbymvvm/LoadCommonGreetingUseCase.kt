@@ -3,9 +3,9 @@ package com.example.lobbymvvm
 import io.reactivex.Single
 import javax.inject.Inject
 
-class LoadCommonGreetingUseCase @Inject constructor(private val greetingRepository: CommonGreetingRepository) {
+class LoadCommonGreetingUseCase @Inject constructor(private val greetingRepository: CommonGreetingRepository): LoadGreetingUseCase {
 
-    fun execute(): Single<String> {
+    override fun execute(): Single<String> {
         return greetingRepository.getGreeting()
     }
 }
