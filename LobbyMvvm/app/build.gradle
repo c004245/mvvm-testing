@@ -4,6 +4,13 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+project.ext {
+    daggerVersion = "2.13"
+    rxJavaVersion = "2.1.0"
+    rxAndroidVersion = "2.0.1"
+    timberVersion = "4.6.0"
+    lifecycleVersion = "1.0.0"
+}
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.0"
@@ -32,4 +39,24 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //Dagger Core
+    annotationProcessor "com.google.dagger:dagger-compiler:$project.daggerVersion"
+    implementation "com.google.dagger:dagger:$project.daggerVersion"
+
+    //Dagger Android
+    annotationProcessor "com.google.dagger:dagger-android-processor:$project.daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$project.daggerVersion"
+    implementation "com.google.dagger:dagger-android:$project.daggerVersion"
+
+    //ReactiveX
+    implementation "io.reactivex.rxjava2:rxjava:$project.rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$project.rxAndroidVersion"
+
+
+    ///Lifeccycle
+    implementation "android.arch.lifecycle:runtime:$project.lifecycleVersion"
+    implementation "android.arch.lifecycle:extensions:$project.lifecycleVersion"
+    annotationProcessor "android.arch.lifecycle:compiler:$project.lifecycleVersion"
+
 }
